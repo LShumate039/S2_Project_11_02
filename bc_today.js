@@ -1,3 +1,4 @@
+"use strict"
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -12,8 +13,16 @@
    student union.
 
 */
-
-
+// this displays the new date onto the website 
+var thisDate = new Date();
+var dateString = thisDate.toLocaleDateString('en-us');
+var dateHTML = "<h2>" + thisDate + "</h2>";
+//this var has the same value as eventHTML 
+var thisDay = thisDate.getDay();
+var eventHTML = getEvent(thisDay);
+// this element combines both dateHTML and eventHTML 
+document.getElementById("unionToday").insertAdjacentHTML("beforeend",
+    dateHTML + eventHTML);
 
 function getEvent(day) {
     var eventHTML;
